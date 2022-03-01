@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.resume-info {
+  display: flex;
+  line-height: 32px;
+  width: 1400px;
+  margin: auto;
+}
+
+.header-section {
+  background-color: var(--palette-color1);
+  color: var(--palette-color3);
+}
+
+.skills-section {
+  background-color: var(--palette-color2);
+  color: var(--palette-color1);
+}
+
+.resume-section {
+  background-color: var(--palette-color5);
+  color: var(--palette-color3);
+}
+
+.projects-section {
+  background-color: var(--palette-color4);
+  color: var(--palette-color1);
+}
+
+@media screen and (max-width: 1024px) {
+  .resume-info {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resume-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .resume-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

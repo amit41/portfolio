@@ -1,0 +1,13 @@
+.skill-bar {
+  padding: 5px 0px;
+}
+.skill-bar-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 32px;
+}
+
+.skill-bar-info span {
+  font-weight: 500;
+}

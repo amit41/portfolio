@@ -1,0 +1,28 @@
+.work-experience-wrapper {
+  padding: 60px 152px;
+  line-height: 32px;
+}
+
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  line-height: 32px;
+}
+
+.work-responsibility-list {
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .work-experience-wrapper {
+    padding: 60px 64px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-experience-wrapper {
+    text-align: center;
+    padding: 32px;
+  }
+}
