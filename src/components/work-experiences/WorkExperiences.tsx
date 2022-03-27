@@ -1,12 +1,11 @@
-import "./work-experiences.css";
 const WorkExperiences = () => {
   return (
-    <div className="work-experience-wrapper">
-      <h2>Work Experiences</h2>
-      <div className="work-experience">
-        <div className="work-experience-duration">05/2018 - Now</div>
-        <div className="work-experience-title">Lead Frontend Developer</div>
-        <div className="work-experience-company">Hays AG, Mannheim</div>
+    <div className='work-experience-wrapper'>
+      <h2 className='text-3xl font-medium'>Work Experiences</h2>
+      <div className='work-experience'>
+        <div className='work-experience-duration'>05/2018 - Now</div>
+        <div className='work-experience-title'>Lead Frontend Developer</div>
+        <div className='work-experience-company'>Hays AG, Mannheim</div>
       </div>
       {/* <div className="work-responsibility">
         <h3>Responsibilities</h3>

@@ -1,12 +1,11 @@
-import "./education.css";
 const Education = () => {
   return (
-    <div className="education-wrapper">
-      <h2>Education</h2>
-      <div className="education">
-        <div className="education-duration">03/2014 - 11/2017</div>
-        <div className="education-title">Applied Computer Science, B.Sc.</div>
-        <div className="education-university">Hochschule Worms, Germany</div>
+    <div className='education-wrapper'>
+      <h2 className='text-3xl font-medium'>Education</h2>
+      <div className='education'>
+        <div className='education-duration'>03/2014 - 11/2017</div>
+        <div className='education-title'>Applied Computer Science, B.Sc.</div>
+        <div className='education-university'>Hochschule Worms, Germany</div>
       </div>
       {/* <div className="education">
         <span className="education-duration">10/2009 – 02/2014</span>

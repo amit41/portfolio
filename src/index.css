@@ -1,7 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
 
 :root {
-  --font-family: "Fira Sans", sans-serif;
+  --font-family: 'Fira Sans', sans-serif;
   --font-size: 16px;
   --palette-color1: #2b6777;
   --palette-color2: #c8d8e4;
@@ -9,3 +16,7 @@
   --palette-color4: #f2f2f2;
   --palette-color5: #52ab98;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

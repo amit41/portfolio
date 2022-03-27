@@ -1,6 +1,5 @@
-import LinearProgress from "@material-ui/core/LinearProgress";
-import { createStyles, withStyles } from "@material-ui/core/styles";
-import "./skill-bar.css";
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 
 // Creating custom LinearProgress component
 const CustomLinearProgress = withStyles(() =>
@@ -9,7 +8,7 @@ const CustomLinearProgress = withStyles(() =>
       height: 16
     },
     bar: {
-      backgroundColor: "#52ab98"
+      backgroundColor: '#52ab98'
     }
   })
 )(LinearProgress);
@@ -21,12 +20,12 @@ interface Props {
 
 const SkillBar = (skill: Props) => {
   return (
-    <div className="skill-bar">
-      <div className="skill-bar-info">
+    <div className='skill-bar py-2'>
+      <div className='skill-bar-info flex flex-row justify-between'>
         <span>{skill.name}</span>
         <span>{skill.percent}%</span>
       </div>
-      <CustomLinearProgress variant="determinate" value={skill.percent} />
+      <CustomLinearProgress variant='determinate' value={skill.percent} />
     </div>
   );
 };
