@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 const ProjectCard = (project: Project) => {
   const classes = useStyles();
   return (
-    <Card>
+    <Card className='h-full'>
       <CardMedia
         className={classes.media}
         image={project.imageUrl}
