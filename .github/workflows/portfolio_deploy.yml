@@ -2,9 +2,9 @@ name: Portfolio Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -12,22 +12,28 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies and Build
-      run: |
-        npm install
-        npm run build
+      - name: Install dependencies and Build
+        run: |
+          npm install
+          npm run build
 
-    - name: Deploy build files to server
-      run: |
-       # Copy files from build directory
-       scp -r ./build/* amku@localhost:/var/www/react/portfolio/
+      - name: Deploy build files to server
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H localhost >> ~/.ssh/known_hosts
+          scp -r ./_work/portfolio/portfolio/build/* amku@localhost:/var/www/react/portfolio/
+        shell: /usr/bin/bash -e {0}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
