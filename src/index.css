@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,14 +7,133 @@
   scroll-behavior: smooth;
 }
 
+/* Design tokens */
 :root {
-  --font-family: 'Fira Sans', sans-serif;
+  --font-family: "Fira Sans", sans-serif;
   --font-size: 16px;
-  --palette-color1: #2b6777;
-  --palette-color2: #c8d8e4;
-  --palette-color3: #ffffff;
-  --palette-color4: #f2f2f2;
-  --palette-color5: #52ab98;
+
+  /* New 3-color palette */
+  --color-primary: #1a5f7a; /* Dark teal */
+  --color-secondary: #7fb3c7; /* Muted teal/seafoam green */
+  --color-surface: #f8fbfc; /* Very light blue/off-white */
+  
+  /* Base colors (light) */
+  --color-bg: #f8fbfc; /* Very light blue/off-white */
+  --color-muted: #e8f4f8; /* Lighter version of secondary */
+  --color-text: #1a1a1a; /* Dark gray/black for primary text */
+  --color-text-muted: #4a4a4a; /* Medium gray for muted text */
+  --color-text-light: #7fb3c7; /* Secondary color for accents */
+  
+  /* Gradient combinations using the 3-color palette */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary), var(--color-surface));
+  --gradient-accent: linear-gradient(135deg, var(--color-primary), #5a7a8a);
+  --gradient-warm: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  
+  /* Default accent for backward compatibility */
+  --color-accent: var(--color-primary);
+  --color-on-accent: #ffffff;
+  
+  /* Additional utility colors */
+  --color-border: rgba(26, 95, 122, 0.15);
+  --color-shadow: rgba(26, 95, 122, 0.08);
+  --color-shadow-hover: rgba(26, 95, 122, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0a1a23; /* Dark version of primary */
+    --color-surface: #1a2f3a; /* Darker surface */
+    --color-muted: #142a35; /* Dark muted */
+    --color-text: #e8f4f8; /* Light surface color for text */
+    --color-text-muted: #a8d1e0; /* Lighter muted text for dark mode */
+    --color-text-light: #a8d1e0; /* Lighter secondary */
+    
+    /* Gradient combinations (dark) */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-secondary: linear-gradient(135deg, var(--color-secondary), #a8d1e0);
+    --gradient-accent: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-warm: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    
+    /* Default accent for backward compatibility */
+    --color-accent: var(--color-secondary);
+    --color-on-accent: #1a5f7a;
+    
+    /* Additional utility colors (dark) */
+    --color-border: rgba(127, 179, 199, 0.2);
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-shadow-hover: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Utility hooks for Tailwind + CSS vars */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-muted {
+  background-color: var(--color-muted);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.text-on-accent {
+  color: var(--color-on-accent);
+}
+
+/* New color utility classes */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-surface-light {
+  background-color: var(--color-surface);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-light {
+  color: var(--color-text-light);
+}
+
+/* Gradient utility classes */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+}
+.bg-gradient-warm {
+  background: var(--gradient-warm);
+}
+
+/* Enhanced shadow utilities */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px var(--color-shadow);
+}
+.shadow-medium {
+  box-shadow: 0 10px 15px -3px var(--color-shadow);
+}
+.shadow-soft-hover:hover {
+  box-shadow: 0 8px 25px -5px var(--color-shadow-hover);
 }
 
 @tailwind base;

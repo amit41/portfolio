@@ -25,37 +25,57 @@ const Header = () => {
   }
 
   return (
-    <div className="header-wrapper container flex flex-wrap p-16 mx-auto xs:flex-wrap xs:justify-center md:flex-nowrap">
-      <div className="photo">
+    <div className="container mx-auto px-6 py-16">
+      <div className="bg-surface rounded-2xl shadow-medium ring-1 ring-black/5 p-6 sm:p-10 flex flex-col md:flex-row md:items-center gap-8 relative overflow-hidden">
+        {/* Background accent */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary opacity-10 rounded-full translate-y-12 -translate-x-12"></div>
+
         <img
-          className="h-80 object-cover p-1 bg-white border rounded max-w-sm"
+          className="h-32 w-32 sm:h-40 sm:w-40 rounded-xl object-cover ring-2 ring-white/20 shadow-soft relative z-10"
           src={photo}
           alt="Profile"
         />
-      </div>
-      <div className="profile flex flex-col xs:mt-4 sm:pl-0 xs:text-center md:mt-0 md:pl-8 md:text-left md:justify-center">
-        <div className="profile-name grid grid-cols-1 leading-8 border-b pb-4">
-          <span className="text-4xl font-medium">Amit Kumal</span>
-          <span>Frontend Developer</span>
-          <span className="brand-icons text-xl">
-            <a className="pr-2" href="https://github.com/amit41" rel="noopener">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a
-              href="https://www.xing.com/profile/Amit_KumalKopila2/cv"
-              rel="noopener"
-            >
-              <FontAwesomeIcon icon={faXing} className="xing" />
-            </a>
-          </span>
-        </div>
-        <div className="profile-text mt-4">
-          Frontend Developer with {calculateExperience()} years experience in
-          Angular framework. Understanding the clients requirements, their
-          business value and create a product as their expectation. Proficient
-          in creating and developing user interfaces, writing and testing codes,
-          troubleshooting issues and implementing new features as per client and
-          business needs.
+        <div className="flex-1 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight font-semibold text-primary">
+                Amit Kumal
+              </h1>
+              <p className="text-[#4a4a4a] mt-1 font-medium">
+                Frontend Developer
+              </p>
+            </div>
+            <div className="flex items-center gap-3 text-xl">
+              <a
+                className="text-[#4a4a4a] hover:text-primary transition-colors duration-300 p-2 rounded-lg hover:bg-primary/10"
+                href="https://github.com/amit41"
+                rel="noopener"
+                aria-label="GitHub Profile"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a
+                className="text-[#4a4a4a] hover:text-primary transition-colors duration-300 p-2 rounded-lg hover:bg-primary/10"
+                href="https://www.xing.com/profile/Amit_KumalKopila2/cv"
+                rel="noopener"
+                aria-label="Xing Profile"
+              >
+                <FontAwesomeIcon icon={faXing} />
+              </a>
+            </div>
+          </div>
+          <p className="mt-6 leading-7 text-[15px] text-[#4a4a4a]">
+            Frontend developer with{" "}
+            <span className="text-primary font-semibold">
+              {calculateExperience()} years
+            </span>{" "}
+            of experience focusing on{" "}
+            <span className="text-primary font-semibold">Angular</span> and{" "}
+            <span className="text-primary font-semibold">React</span>. I turn
+            requirements into clean, accessible interfaces, write robust tests,
+            and ship features that align with business goals.
+          </p>
         </div>
       </div>
     </div>
